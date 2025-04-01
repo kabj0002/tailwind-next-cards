@@ -1,4 +1,5 @@
 import ThemeToggle from "@/components/theme-toggle";
+import "./globals.css";
 
 export default function Home() {
   const data = [
@@ -22,7 +23,7 @@ export default function Home() {
   return (
     <main>
       <ThemeToggle />
-      <ul>
+      <ul class="p-8 bg-white rounded-xl dark:bg-black dark:text-purple-400">
         {data.map((item, i) => (
           <Card key={i} {...item} />
         ))}
@@ -33,18 +34,20 @@ export default function Home() {
 
 function Card({ title, category }) {
   return (
-    <li>
-      <a href="#0">
-        <div className="aspect-square w-10 rounded-md bg-[#cbd5e1]"></div>
+    <li class="p-4 max-w-[400px] hover:bg-slate-100 hover:rounded-lg">
+      <a href="#0" class="flex flex-row items-center">
+        <div className="aspect-square w-10 h-10 mr-8 rounded-md bg-[#cbd5e1]"></div>
         <div>
-          <p>{title}</p>
-          <small>{category}</small>
+          <p class="font-bold">{title}</p>
+          <small class="text-[#73767a]">{category}</small>
         </div>
+
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
           height="32"
           viewBox="0 0 24 24"
+          class="text-purple-600 ml-4"
         >
           <path
             fill="currentColor"
